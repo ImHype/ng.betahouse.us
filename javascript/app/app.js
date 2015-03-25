@@ -9,6 +9,8 @@ betaApp.config(['$routeProvider',function ($routeProvider) {
 		templateUrl:"/view/group.html"
 	}).when('/work',{
 		templateUrl:"/view/work.html"
+	}).when('/menbers',{
+		templateUrl:"/view/menbers.html"
 	}).when('/join',{
 		template:"<h1>join</h1>"
 	}).when('/bbs',{

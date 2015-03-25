@@ -111,3 +111,20 @@ function addEvent (obj,type,handle) {
 		obj.attachEvent("on"+type,handle);
 	}
 }
+function getByClass (parent,sclass) {
+	if(parent.getElementsByClassName){
+		return parent.getElementsByClassName(sclass);
+	}else if(parent.querySelector){
+		return parent.querySelector("."+sclass);
+	}
+	else {
+		var results = [];
+		var aEle = parent.getElementsByTagName('*');
+		for (var i = 0; i < aEle.length; i++) {
+			if(new RegExp("\s|$"+aEle+"\s|^").test(aEle[i].className)){
+				results.push(aEle[i]);
+			}
+		};
+		return results;
+	}
+}
