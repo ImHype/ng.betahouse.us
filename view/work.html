@@ -1,0 +1,7 @@
+<div id="workshow" ng-controller="workshow">
+	<div> 
+		<div class="inner" ng-repeat="work in works">
+			<img ng-click="showWork({{work.index}})" src="{{ work.picSrc }}">
+		</div>
+	</div>
+</div>
