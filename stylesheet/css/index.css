@@ -18,6 +18,24 @@ body{
 	top: 0;
 	z-index: 101;
 }
+.dropdown{
+}
+.dropdown>ul{
+	padding-left: 0;
+	background: #fff;
+	padding: 0 20px;
+	height: 0;
+	overflow: hidden;
+	-webkit-transition : all 0.5s;
+}
+.dropdown:hover>ul{
+	height: 171px;
+	opacity: 1;
+}
+.dropdown>ul>li>a{
+	font-size: 16px;
+	color: #333;
+}
 #head>#headcon{
 	width: 1092px;
 	margin: 0 auto;
@@ -31,12 +49,13 @@ body{
 }
 .nav{
 	float: right;
-	width: 400px;
+	width: 550px;
 }
-.nav li{
+.nav>li{
+	width: 104px;
 	float: left;
-	margin-left: 30px;
 	font-size: 18px;
+	text-align: center;
 }
 #view{
 	background: url(/image/index-background.jpg);
@@ -88,7 +107,7 @@ body{
 	animation:1.5s fly forwards;
 	opacity: 0;
 	-webkit-transition:-webkit-transform 1.5s;
-	transition:transform 1.5s;
+		transition:transform 1.5s;
 }
 
 
@@ -99,7 +118,7 @@ body{
 	left: 28px;
 	top: 28px;
 	-webkit-animation-delay :150ms;
-	animation-delay :150ms;
+		animation-delay :150ms;
 }
 #logo div:nth-child(2){
 	width: 56px;
@@ -107,7 +126,7 @@ body{
 	height: 800px;
 	top: 84px;
 	-webkit-animation-delay :300ms;
-	animation-delay :300ms;
+		animation-delay :300ms;
 }
 #logo div:nth-child(3){
 	width: 84px;
@@ -116,7 +135,7 @@ body{
 	top: 0;
 	left: 84px;
 	-webkit-animation-delay :450ms;
-	animation-delay :450ms;
+		animation-delay :450ms;
 }
 #logo div:nth-child(4){
 	width: 84px;
@@ -125,7 +144,7 @@ body{
 	top: 0;
 	left: 168px;
 	-webkit-animation-delay :600ms;
-	animation-delay :600ms;
+		animation-delay :600ms;
 }
 #logo div:nth-child(5){
 	width: 84px;
@@ -134,7 +153,7 @@ body{
 	top: 84px;
 	left: 196px;
 	-webkit-animation-delay :750ms;
-	animation-delay :750ms;
+		animation-delay :750ms;
 }
 #logo div:nth-child(6){
 	width: 140px;
@@ -143,7 +162,7 @@ body{
 	top: 196px;
 	left: 112px;
 	-webkit-animation-delay :900ms;
-	animation-delay :900ms;
+		animation-delay :900ms;
 }
 #logo div:nth-child(7){
 	width: 84px;
@@ -152,7 +171,7 @@ body{
 	top: 252px;
 	left: 168px;
 	-webkit-animation-delay :1050ms;
-	animation-delay :1050ms;
+		animation-delay :1050ms;
 }
 #logo div:nth-child(8){
 	width: 84px;
@@ -161,7 +180,7 @@ body{
 	top: 364px;
 	left: 140px;
 	-webkit-animation-delay :1200ms;
-	animation-delay :1200ms;
+		animation-delay :1200ms;
 }
 #logo div:nth-child(9){
 	width: 84px;
@@ -170,7 +189,7 @@ body{
 	top: 364px;
 	left: 56px;
 	-webkit-animation-delay :1350ms;
-	animation-delay :1350ms;
+		animation-delay :1350ms;
 }
 
 /*loading*/
