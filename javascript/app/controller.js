@@ -5,9 +5,8 @@ betaApp.controller("grouplogo",function($scope){
 
 });
 betaApp.controller("overController",function($element,$scope,$rootScope){
-	$scope.isPanelShow = $rootScope.isPanelShow;
 	$scope.closePanel=function(){
-		$scope.isPanelShow = false;
+		$rootScope.isPanelShow = false;
 	}
 });
 betaApp.controller("workshow",function($element,$scope,$rootScope){
@@ -17,9 +16,12 @@ betaApp.controller("workshow",function($element,$scope,$rootScope){
 		"picSrc" : "/image/join.betahouse.us.png",
 		"content" : "betahouse招新网"
 	}];
+
 	$scope.isPanelShow = $rootScope.isPanelShow;
 	$scope.showWork = function(arg){
-		$scope.isPanelShow=true;
+		$rootScope.isPanelShow=true;
+		$rootScope.conhead = $scope.works[arg].name;
+		$rootScope.content = $scope.works[arg].content;
 	}
 });
 betaApp.directive('over',function(){
@@ -29,8 +31,8 @@ betaApp.directive('over',function(){
 		controller:function(){
 
 		},
-		link:function(scope, elem, attrs){
-			// oClose.
+		link:function($scope, elem, attrs,$rootScope){
+			
 		}
 	}
 });

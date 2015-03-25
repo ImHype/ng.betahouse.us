@@ -1,0 +1,19 @@
+<div class="Mwdiv" ng-controller="SearchCtrl">
+    <div class="Mwdiv_header">
+        <div class="Mwdiv_header_serimg" ng-click="SearchLoad()"></div>
+        <input class="Mwdiv_header_input1" type="text">
+        <a ui-sref="index"><div class="Mwdiv_header_cancel">取消</div></a>
+    </div>
+    <div class="content" go-all ng-repeat="searcher in mysearch">
+        <div class="contentuser">
+            <div class="contentuser_img"></div>
+            <div class="contentuser_name">&nbsp;{{searcher.number}}问:</div>
+        </div>
+        <div class="contenthead" >{{searcher.name}}</div>
+        <div class="contentbody">回答:<br>{{searcher.string}}</div>
+        <div class="contentfoot">
+            <div class="foot_img"></div>
+            <p>&nbsp;&nbsp;{{searcher.place}}</p>
+        </div>
+    </div>
+</div>

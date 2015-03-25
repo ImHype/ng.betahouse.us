@@ -1,0 +1,463 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0 auto;
+    position: absolute;
+    max-width: 450px;
+    font-family: "微软雅黑";
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    perspective: 800px;
+}
+
+.Mwdiv {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: auto;
+    background-color: #f0f0f0;
+}
+
+.Mwdiv_header{
+    width: 100%;
+    height: 5%;
+    background-color: #37b059;
+    padding-top: 2%;
+}
+
+.Mwdiv_header_img{
+    width: 9%;
+    height: 80%;
+    margin-left: 4%;
+    position: relative;
+    background-color: beige;
+    float: left;
+}
+
+.Mwdiv_header_serimg{
+    width: 7%;
+    height: 80%;
+    background-color: #32a051;
+    float: left;
+}
+
+.Mwdiv_header_input{
+    float: left;
+    width: 80%;
+    height: 80%;
+    margin-left: 2%;
+    background-color: #32a051;
+    border:none;
+    font-family: 微软雅黑;
+    color: aliceblue;
+    font-size: 1em;
+}
+
+.Mwdiv_header_input1{
+    float: left;
+    width: 75%;
+    height: 80%;
+    background-color: #32a051;
+    border:none;
+    font-family: 微软雅黑;
+    color: aliceblue;
+    font-size: 1em;
+}
+
+
+.Mwdiv_header_cancel{
+    padding-left: 3%;
+    padding-bottom: 1%;
+    width: 15%;
+    height: 80%;
+    float: left;
+    font-size: 1.2em;
+    color: #f0f0f0;
+}
+
+.searchIn{
+    width: 40%;
+    height: 80%;
+    margin: auto;
+}
+
+.searchIn p{
+    margin-left: 14%;
+    color: aliceblue;
+}
+
+.question{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #f0f0f0;
+}
+
+.Myself{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #f0f0f0;
+}
+
+.foot{
+    height: 7%;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background-color: transparent;
+}
+
+.foot_Left{
+    height: 100%;
+    width: 40%;
+    border-top: 1px solid darkslateblue;
+    position: absolute;
+    background-color: #f8f8f8;
+}
+
+.foot_Right{
+    height: 100%;
+    width: 40%;
+    border-top: 1px solid darkslateblue;
+    margin-left: 60%;
+    position: absolute;
+    background-color: #f8f8f8;
+}
+
+.foot_Center{
+    height: 200%;
+    margin-top: -5%;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    width: 25%;
+    border-top: 1px solid darkslateblue;
+    position: absolute;
+    margin-left: 38%;
+    background-color: #f8f8f8;
+}
+
+#foot_center_btn{
+    margin-left: 37%;
+    margin-top: 5%;
+    width: 45px;
+    height: 45px;
+    background-image: url("");
+}
+
+.header{
+    width: 100%;
+    height: 5%;
+    position: absolute;
+    background-color: #37b059;
+    box-shadow: 1px 1px 1px 0px darkcyan;
+}
+
+#header_center{
+    position: absolute;
+    font-size: 1.1em;
+    color: #f8f8f8;
+    font-family: 微软雅黑;
+    padding-left: 37%;
+    padding-top: 1%;
+}
+
+.Myhead{
+    height: 5%;
+    width: 100%;
+    background-color: #37b059;
+    position: relative;
+    box-shadow: 0px 1px 1px 0px darkcyan;
+}
+
+.Myhead p{
+    font-size: 1.2em;
+    color: #f8f8f8;
+    padding-left: 40%;
+    padding-top: 1%;
+}
+
+.body{
+    width: 100%;
+    height: 95%;
+}
+
+.Mybody{
+    width: 100%;
+    height: 95%;
+    overflow-y: scroll;
+}
+
+.content{
+    width: 94%;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    background-color: snow;
+    overflow: hidden;
+    border-radius: 2px;
+    border: 1px solid #cccccc;
+}
+
+.load{
+    width: 94%;
+    height: 15%;
+    margin-left: 3%;
+    margin-top: 1%;
+    background-color: transparent;
+}
+.load1{
+    margin-left: 30%;
+}
+
+.contentuser{
+    width:100%;
+    height: 2.0em;
+    margin: auto;
+    padding: 1%;
+    font-size: 0.9em;
+}
+.contentuser_img{
+    width: 2.0em;
+    height: 2.0em;
+    background-color: #2299dd;
+    border-radius: 90px;
+    float: left;
+}
+
+.contentuser_name{
+    width: 70%;
+    float: left;
+    font-family: 微软雅黑;
+}
+
+.contenthead{
+    margin: auto;
+    width: 100%;
+    padding-bottom: 3%;
+    background-color: snow;
+    box-shadow: 0px 1px 1px 0px #cccccc;
+}
+
+.contentbody {
+    background-color: #f8f8f8;
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    padding: 1%;
+    border-top: 1px solid #cccccc;
+}
+
+.contentfoot{
+    width: 100%;
+}
+
+.contentfoot p{
+    font-size: 0.8em;
+    color: cornflowerblue;
+}
+
+.foot_img{
+    width: 1em;
+    height: 1em;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    background-color: cornflowerblue;
+    float: left;
+}
+
+.biaoti{
+    width: 33%;
+    height: 4%;
+    position: absolute;
+    margin-top: 17%;
+    margin-left: 5%;
+    color: aliceblue;
+    background-color: #37b059;
+    border-radius: 4px;
+    padding-left: 2.5%;
+    padding-top: 1%;
+    box-shadow: 1px 1px 1px 1px #37b059;
+}
+
+.neirong{
+    width: 50%;
+    height: 4%;
+    position: absolute;
+    background-color: #37b059;
+    color: aliceblue;
+    border-radius: 4px;
+    margin-left: 5%;
+    margin-top: 40%;
+    padding-left: 4%;
+    padding-top: 1%;
+    box-shadow: 1px 1px 1px 1px #37b059;
+}
+
+.Allneirong{
+    width: 20%;
+    height: 4%;
+    position: absolute;
+    background-color: #37b059;
+    color: aliceblue;
+    border-radius: 4px;
+    margin-left: 5%;
+    margin-top: 40%;
+    padding-left: 4%;
+    padding-top: 1%;
+    box-shadow: 1px 1px 1px 1px #37b059;
+}
+
+.nrCtn{
+    width: 82%;
+    height: 30%;
+    margin-top: 50%;
+    margin-left: 5%;
+    position: absolute;
+    border-radius: 4px;
+    font-size: 1.1em;
+    padding: 4%;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.headline{
+    width: 86%;
+    height: 4%;
+    margin-top: 27%;
+    margin-left: 5%;
+    position: absolute;
+    line-height: 120%;
+    border-radius: 4px;
+    font-size: 1.2em;
+    border: none;
+    padding: 2%;
+    overflow: hidden;
+}
+
+.btCtn{
+    width: 86%;
+    height: 4%;
+    margin-top: 27%;
+    margin-left: 5%;
+    position: absolute;
+    line-height: 120%;
+    border-radius: 4px;
+    font-size: 1.2em;
+    border: none;
+    padding: 2%;
+    overflow: hidden;
+}
+
+.bodycontent{
+    width: 82%;
+    height: 30%;
+    margin-top: 50%;
+    margin-left: 5%;
+    position: absolute;
+    border-radius: 4px;
+    font-size: 1.1em;
+    padding: 4%;
+    overflow: hidden;
+}
+
+
+div[Contenteditable]{
+    cursor: pointer;
+    background-color: #ffffff;
+    border: none;
+}
+
+.GoBtn{
+    width: 90%;
+    height: 5%;
+    border-radius: 3px;
+    background-color: #37b059;
+    font-family: 微软雅黑;
+    position: absolute;
+    color: #f8f8f8;
+    font-size: 1.2em;
+    margin-top: 115%;
+    margin-left: 5%;
+    box-shadow: 1px 1px 1px 1px #cccccc;
+}
+
+.btnContainer{
+    width: 100%;
+    height: 5%;
+    position: relative;
+}
+
+.scrCtn{
+    width: 100%;
+    height: 10%;
+    background-color: beige;
+    float: left;
+}
+
+.scr {
+    width: 50%;
+    height: 100%;
+    background-color: indigo;
+}
+.btnLeft{
+    width: 50%;
+    height: 90%;
+    float: left;
+    border: none;
+    float: left;
+}
+
+.btnLeft p{
+    color: #444444;
+    font-size: 1.2em;
+    font-family: 微软雅黑;
+    width: 40%;
+    font-weight: 500;
+    margin-left: 30%;
+    padding-top: 2%;
+}
+
+.btnRight{
+    width: 50%;
+    height: 90%;
+    float: left;
+    border: none;
+}
+
+.btnRight p{
+    color: #444444;
+    font-size: 1.2em;
+    font-family: 微软雅黑;
+    width: 40%;
+    font-weight: 500;
+    margin-left: 30%;
+    padding-top: 2%;
+}
+
+.text div{
+    background-color: #37b059;
+    color: #f8f8f8;
+}
+
+.text div p{
+    color: #f8f8f8;
+}
+

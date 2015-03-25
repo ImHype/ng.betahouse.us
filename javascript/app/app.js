@@ -4,7 +4,7 @@ var betaApp = angular.module("beta",['ngRoute']);
 	*/
 betaApp.config(['$routeProvider',function ($routeProvider) {
 	$routeProvider.when("/",{
-		templateUrl:"/view/index.html",
+		templateUrl:"/view/index.html"
 	}).when('/group',{
 		templateUrl:"/view/group.html"
 	}).when('/work',{

@@ -1,0 +1,23 @@
+<div class="Mwdiv" ng-controller="LoadDateCtrl">
+    <div class="Mwdiv_header">
+        <div class="Mwdiv_header_img"></div>
+        <a ui-sref="search">
+            <div class="Mwdiv_header_input">
+                <div class="searchIn"><p>点击搜索</p></div>
+            </div>
+        </a>
+    </div>
+    <div class="content" go-all ng-repeat="user in users">
+        <div class="contentuser">
+            <div class="contentuser_img"></div>
+            <div class="contentuser_name">&nbsp;{{user.number}}问:</div>
+        </div>
+        <div class="contenthead" >{{user.name}}</div>
+        <div class="contentbody">回答:<br>{{user.string}}</div>
+        <div class="contentfoot">
+            <div class="foot_img"></div>
+            <p>&nbsp;&nbsp;{{user.place}}</p>
+        </div>
+    </div>
+    <div class="load"><p ng-click="loadMore()" class="load1">点击加载更多内容...</p></div>
+</div>
