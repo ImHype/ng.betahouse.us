@@ -21,32 +21,37 @@ betaApp.controller("overController",function($element,$scope,$rootScope){
 		$rootScope.isPanelShow = false;
 	}
 });
+betaApp.controller("menbershow",function($element,$scope,$rootScope){
+	new gallery().conf({
+		1:'<div></div>',
+		2:'<div></div>',
+		3:'<div></div>',
+		4:'<div></div>',
+		5:'<div></div>',
+		6:'<div></div>'
+	});
+})
 betaApp.controller("workshow",function($element,$scope,$rootScope){
 	$scope.works=[{
-		"index" : 0,
 		"name" : "β-house招新网",
 		"picSrc" : "/image/join.betahouse.us.png",
 		"content" : "betahouse招新网"
 	},{
-		"index" : 0,
 		"name" : "β-house招新网",
 		"picSrc" : "/image/join.betahouse.us.png",
 		"content" : "betahouse招新网"
 	},{
-		"index" : 0,
 		"name" : "β-house招新网",
 		"picSrc" : "/image/join.betahouse.us.png",
 		"content" : "betahouse招新网"
 	},{
-		"index" : 0,
 		"name" : "β-house招新网",
 		"picSrc" : "/image/join.betahouse.us.png",
 		"content" : "betahouse招新网"
 	},{
-		"index" : 0,
 		"name" : "β-house招新网",
 		"picSrc" : "/image/join.betahouse.us.png",
-		"content" : "betahouse招新网"
+		"content" : "it is so good"
 	}];
 
 	$scope.isPanelShow = $rootScope.isPanelShow;
