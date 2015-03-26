@@ -13,6 +13,7 @@ gallery.prototype={
 		this.actArray = ['pre-active','now-active','next-active','over-active'];
 		this.count = 0;
 		for(var attr in this.json){
+
 			this.digui(this.json[attr]);
 		}
 		this.active = this.getActive(this.aBox);
@@ -24,14 +25,16 @@ gallery.prototype={
 	digui:function (obj){
 		var oDiv = document.createElement('div');
 		var _this = this;
-		oDiv.className = "box";
-		oDiv.innerHTML+=obj;
+		// oDiv.className = "box";
+		// oDiv.innerHTML+=obj;
+		// oDiv.setAttribute('index',this.count);
+		// oDiv.setAttribute('ng-click',"showMenber("+this.count+")");
+		// this.oParent.appendChild(oDiv);
+		this.oParent.innerHTML += '<div class="box" index="'+this.count+'" ng-click=showMenber('+this.count+')'+'>'+obj+'</div>'
+		var oDiv = getByClass(this.oParent,"box")[0];
 		if(this.count>=0&&this.count<=3){
 			oDiv.setAttribute('act',_this.actArray[_this.count]);
 		}
-
-		oDiv.setAttribute('index',this.count);
-		this.oParent.appendChild(oDiv);
 		this.oParent = oDiv;
 		this.count++;
 	},

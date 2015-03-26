@@ -2,21 +2,9 @@
 	<div id="grouplogo" ng-controller="grouplogo">
 		<div grouplogo></div>
 		<div id="grouplogoinner">
-			<div id="qd">
-				<div>前端部</div>
-				<div>前端部</div>
-			</div>
-			<div id="ht">
-				<div>后台部</div>
-				<div>后台部</div>
-			</div>
-			<div id="fwq">
-				<div>设计</div>
-				<div>服务器</div>
-			</div>
-			<div id="yy">
-				<div>设计</div>
-				<div>设计</div>
+			<div id="{{group.id}}" ng-repeat="group in groups" ng-click="groupShow($index)">
+				<div>{{ group.groupName }}</div>
+				<div>{{ group.groupName }}</div>
 			</div>
 		</div>
 	</div>

@@ -1,4 +1,6 @@
+
 betaApp.run(function($rootScope){
+
 	$rootScope.isPanelShow = false;
 	$rootScope.closeDialog = function(e){
 		var e =e || event;
@@ -13,24 +15,80 @@ betaApp.run(function($rootScope){
 		$rootScope.isPanelShow = false;
 	}
 });
-betaApp.controller("grouplogo",function($scope){
+betaApp.controller("grouplogo",function($scope,$rootScope){
+	$scope.groups=[{
+		"id":"qd",
+		"groupName":"前端部",
+		"content":"前端"
+	},{
+		"id":"ht",
+		"groupName":"后台部",
+		"content":"前端"
 
+	},{
+		"id":"fwq",
+		"groupName":"服务器",
+		"content":"前端"
+
+	},{
+		"id":"yy",
+		"groupName":"设计",
+		"content":"前端"
+
+	}];
+	$scope.groupShow=function(arg,e){
+		$rootScope.isPanelShow=true;
+		$rootScope.conhead=$scope.groups[arg]["groupName"];
+		$rootScope.content=$scope.groups[arg]["content"];
+		if(e.stopPropagation){
+			e.stopPropagation();
+		}else{
+			e.cancelBubble=true;
+		}
+	}
 });
 betaApp.controller("overController",function($element,$scope,$rootScope){
 	$scope.closePanel=function(){
 		$rootScope.isPanelShow = false;
 	}
 });
+
 betaApp.controller("menbershow",function($element,$scope,$rootScope){
-	new gallery().conf({
-		1:'<div></div>',
-		2:'<div></div>',
-		3:'<div></div>',
-		4:'<div></div>',
-		5:'<div></div>',
-		6:'<div></div>'
-	});
-})
+	
+	$scope.menbers = [
+	{"name":"许骏宇",
+	"content":"开心快乐"
+	},{"name":"许骏宇",
+	"content":"开心快乐"
+	},{"name":"许骏宇",
+	"content":"开心快乐"
+	},{"name":"许骏宇",
+	"content":"开心快乐"
+	},{"name":"许骏宇",
+	"content":"开心快乐"
+	},{"name":"许骏宇",
+	"content":"开心快乐"
+	}];
+	setTimeout(function(){
+		var oBox = getByClass($element[0],"box");
+		for (var i = 0; i < oBox.length; i++) {
+			oBox[i].index = i;
+			oBox[i].onclick=function(e){
+				var n = this.index;
+				$rootScope.isPanelShow=true;
+				$rootScope.conhead = $scope.menbers[n].name;
+				$rootScope.content = $scope.menbers[n].content;
+				var e = e||event;
+				if(e.stopPropagation){
+					e.stopPropagation();
+				}else{
+					e.cancelBubble=true;
+				}
+			}
+		};
+	})
+});
+
 betaApp.controller("workshow",function($element,$scope,$rootScope){
 	$scope.works=[{
 		"name" : "β-house招新网",
@@ -75,33 +133,21 @@ betaApp.controller("workshow",function($element,$scope,$rootScope){
 		}
 	}
 });
-betaApp.directive('over',function(){
-	return {
-		restrict:"EACM",
-		templateUrl:'/template/over.html',
-		controller:function(){
 
-		},
-		link:function($scope, elem, attrs,$rootScope){
+betaApp.controller('history',["$element","$scope",function($element,$scope){
+	$scope.events=[{
+		"time":"2010.9.1",
+		"content":"betahouse工作室成立"
+	},{
+		"time":"2010.9.1",
+		"content":"betahouse工作室成立1"
+	},{
+		"time":"2010.9.1",
+		"content":"betahouse工作室成立2"
+	}];
+	$scope.eventContent = $scope.events[0]["content"];
+	$scope.changeCon=function(arg){
+		$scope.eventContent = $scope.events[arg]["content"];
+	}
 
-		}
-	}
-});
-betaApp.directive('grouplogo',function(){
-	return {
-		restrict:"EACM",
-		controller:function($scope,$element,$attrs,$transclude){
-		},
-		link:function(scope, elem, attrs){
-			for(var i = 19;i>=0;i--){
-				var oDiv = document.createElement("div");
-				oDiv.style.width="250px";
-				oDiv.style.height="28px";
-				oDiv.style['background-position']="0 "+"-"+i*28+"px";
-				oDiv.style.top=i*28+"px";
-				oDiv.style['-webkit-animation-delay']= (20-i)*50+"ms";
-				elem.append(oDiv);
-			}
-		}
-	}
-})
+}])

@@ -413,18 +413,18 @@ body{
 	-webkit-transform:translateX(-250px);
 	-webkit-transition:-webkit-transform 1.5s;
 
-	-moz-perspective:800px;
-	-moz-transform-style:preserve-3d;
-	-moz-transform-origin: 50% 50%;
-	-moz-transform:translateX(-250px);
-	-moz-transition:-moz-transform 1.5s;
+		perspective:800px;
+		transform-style:preserve-3d;
+		transform-origin: 50% 50%;
+		transform:translateX(-250px);
+		transition:	transform 1.5s;
 }
 #wrapper div{
 	width: 250px;
 	height: 180px;
 	float: left;
 	-webkit-transition:all 1.5s;
-	-moz-transition:all 1.5s;
+		transition:all 1.5s;
 }
 #wrapper .box{
 	position: absolute;
@@ -432,12 +432,16 @@ body{
 	-webkit-transform-style:preserve-3d;
 	-webkit-transform-origin: 0% 0%;
 
-	-moz-transform-style:preserve-3d;
-	-moz-transform-origin: 0% 0%;
+		transform-style:preserve-3d;
+		transform-origin: 0% 0%;
+}
+#wrapper .box img{
+	width: 100%;
+	height: 100%;
 }
 #wrapper .show:hover{
 	-webkit-filter:blur(4px);
-	-moz-filter:blur(4px);
+		filter:blur(4px);
 }
 #wrapper .box[index="1"]{
 	background: red;
@@ -459,21 +463,79 @@ body{
 }
 #wrapper .box[act='notpre-active']{
 	-webkit-transform:rotateY(0);
-	-moz-transform:rotateY(0);
+		transform:rotateY(0);
 }
 #wrapper .box[act='pre-active']{
 	-webkit-transform:rotateY(-45deg);
-	-moz-transform:rotateY(-45deg);
+		transform:rotateY(-45deg);
 }
 #wrapper .box[act='now-active']{
 	-webkit-transform:rotateY(45deg);
-	-moz-transform:rotateY(45deg);
+		transform:rotateY(45deg);
 }
 #wrapper .box[act='next-active']{
 	-webkit-transform:rotateY(45deg);
-	-moz-transform:rotateY(45deg);
+		transform:rotateY(45deg);
 }
 #wrapper .box[act='over-active']{
 	-webkit-transform:rotateY(-45deg);
-	-moz-transform:rotateY(-45deg);
+		transform:rotateY(-45deg);
+}
+#history{
+	width: 1092px;
+	margin: auto;
+	position: relative;
+}
+#events{
+	-webkit-transform-style:preserve-3d;
+	-webkit-transform-origin: 0% 0%;
+
+	transform-style:preserve-3d;
+	transform-origin: 0% 0%;
+
+	-webkit-perspective:800px;
+	perspective:800px;
+	position: relative;
+	z-index: 3
+
+}
+#events span{
+	display: block;
+	width: 170px;
+	height: 43px;
+	background: #fff;
+	margin-top: 10px;
+	font-size: 18px;
+	line-height: 43px;
+	text-align: center;
+	border: 2px solid blue;
+	-webkit-transform:rotateY(45deg);
+	transform:rotateY(45deg);
+	-webkit-transition:-webkit-transform 0.8s;
+	transition:transform 0.8s;
+	cursor: pointer;
+}
+#events span:hover{
+	-webkit-transform:rotateY(0);
+	transform:rotateY(0);
+}
+#eventContent{
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #fff;
+	padding: 25px;
+	font-size: 25px;
+	text-indent: 50px;
+}
+#ganzi{
+	background: url(/image/ganzi.png);
+	width: 40px;
+	height: 400px;
+	position: absolute;
+	top: 40px;
+	left: 60px;
+	z-index: 0;
 }

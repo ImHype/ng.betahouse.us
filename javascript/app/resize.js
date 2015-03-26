@@ -28,8 +28,6 @@ addEvent(window,"load",function(){
 });
 
 
-
-
 function addEvent(obj,type,handle) {
 	if(obj.addEventListener){
 		obj.addEventListener(type,handle,true);
