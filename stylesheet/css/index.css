@@ -352,7 +352,7 @@ body{
 	box-shadow: 0 0 10px #ccc inset;
 }
 #con{
-	text-indent: 120px;
+	text-indent: 60px;
 	line-height: 32px;
 	font-size: 23px;
 	font-weight: bold;
@@ -377,6 +377,7 @@ body{
 	margin: auto;
 	height: 400px;
 	position: relative;
+	margin-top: 60px;
 }
 #workshow>.outer{
 	width: 220px;
@@ -406,29 +407,29 @@ body{
 #wrapper{
 	margin-top: 100px;
 	width: 1750px;
-	height: 250px;
+	height: 287px;
 	-webkit-perspective:800px;
 	-webkit-transform-style:preserve-3d;
 	-webkit-transform-origin: 50% 50%;
-	-webkit-transform:translateX(-250px);
+	-webkit-transform:translateX(-172px);
 	-webkit-transition:-webkit-transform 1.5s;
 
 		perspective:800px;
 		transform-style:preserve-3d;
 		transform-origin: 50% 50%;
-		transform:translateX(-250px);
+		transform:translateX(-172px);
 		transition:	transform 1.5s;
 }
 #wrapper div{
-	width: 250px;
-	height: 180px;
+	width: 172px;
+	height: 287px;
 	float: left;
 	-webkit-transition:all 1.5s;
 		transition:all 1.5s;
 }
 #wrapper .box{
 	position: absolute;
-	left: 250px;
+	left: 172px;
 	-webkit-transform-style:preserve-3d;
 	-webkit-transform-origin: 0% 0%;
 
@@ -459,7 +460,7 @@ body{
 	background: red;
 }
 #wrapper .box[index="0"]{
-	background: pink;
+	background: white;
 }
 #wrapper .box[act='notpre-active']{
 	-webkit-transform:rotateY(0);
@@ -485,6 +486,7 @@ body{
 	width: 1092px;
 	margin: auto;
 	position: relative;
+	margin-top: 60px;
 }
 #events{
 	-webkit-transform-style:preserve-3d;
@@ -538,4 +540,11 @@ body{
 	top: 40px;
 	left: 60px;
 	z-index: 0;
+}
+#bbs h2{
+	font-size: 30px;
+	text-align: center;
+	line-height: 450px;
+	font-size: 50px;
+	color: #fff;
 }

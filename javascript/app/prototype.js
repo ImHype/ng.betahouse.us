@@ -25,7 +25,7 @@ gallery.prototype={
 	digui:function (obj){
 		var oDiv = document.createElement('div');
 		var _this = this;
-		this.oParent.innerHTML += '<div class="box" index="'+this.count+'" ng-click=showMenber('+this.count+')'+'>'+obj+'</div>'
+		this.oParent.innerHTML += '<div class="box" index="'+this.count+'">'+obj+'</div>'
 		var oDiv = getByClass(this.oParent,"box")[0];
 		if(this.count>=0&&this.count<=3){
 			oDiv.setAttribute('act',_this.actArray[_this.count]);
@@ -76,8 +76,8 @@ gallery.prototype={
 				break;
 		}
 		_this.setAct();
-		this.wrapper.style.WebkitTransform="translateX("+(this.active)*(-250)+"px)";
-		this.wrapper.style.MozTransform="translateX("+(this.active)*(-250)+"px)";
+		this.wrapper.style.WebkitTransform="translateX("+(this.active)*(-172)+"px)";
+		this.wrapper.style.MozTransform="translateX("+(this.active)*(-172)+"px)";
 	},
 	getActive:function (obj){
 		for (var i = 0; i < obj.length; i++) {

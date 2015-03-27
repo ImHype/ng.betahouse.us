@@ -14,9 +14,8 @@ betaApp.config(['$routeProvider',function ($routeProvider) {
 		controller:"menberinit"
 	}).when('/history',{
 		templateUrl:"/view/history.html"
-	}).when('/join',{
-		template:"<h1>join</h1>"
 	}).when('/bbs',{
-		template:"<h1>bbs</h1>"
+		templateUrl:"/view/bbs.html"
+		
 	})
 }]);

@@ -1,4 +1,4 @@
-var bodyheight = document.documentElement.clientHeight;
+var bodyheight = window.screen.availHeight;
 resizefn();
 
 var start=0,
