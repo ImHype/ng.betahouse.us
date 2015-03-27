@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="beta" ng-keydown="closeDialog()">
+<html ng-app="beta">
 <meta charset="utf-8">
 <head>
 	<title>β-house 工作室</title>
@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet/libs/reset.css">
 	<link rel="stylesheet" type="text/css" href="stylesheet/css/index.css">
 </head>
-<body>
+<body ng-keydown="closeDialog(event)">
 	<div id="canvaswrap">
 		<canvas id="loading" width="120" height="120">
 			您的浏览器不支持canvas

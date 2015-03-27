@@ -1,9 +1,7 @@
-
 betaApp.run(function($rootScope){
-
 	$rootScope.isPanelShow = false;
 	$rootScope.closeDialog = function(e){
-		var e =e || event;
+		var e = e ? e : window.event;
 		switch(e.keyCode){
 			case 27: 
 				$rootScope.isPanelShow = false;
@@ -11,7 +9,7 @@ betaApp.run(function($rootScope){
 		}
 	};
 	$rootScope.clickfn=function(e){
-		var e = e||event;
+		var e = e ? e : window.event;
 		$rootScope.isPanelShow = false;
 	}
 });
@@ -35,6 +33,7 @@ betaApp.controller("grouplogo",function($scope,$rootScope){
 		"content":"工作室网页的设计 效果的呈现"
 	}];
 	$scope.groupShow=function(arg,e){
+		var e = e?e:event;
 		$rootScope.isPanelShow=true;
 		$rootScope.conhead=$scope.groups[arg]["groupName"];
 		$rootScope.content=$scope.groups[arg]["content"];
@@ -99,7 +98,7 @@ betaApp.controller("menbershow",function($element,$scope,$rootScope){
 			   	$rootScope.conhead = $scope.menbers[n].name;
 				$rootScope.content = $scope.menbers[n].content;
 			});
-			var e = e||event;
+			var e = e?e:window.event;
 			if(e.stopPropagation){
 				e.stopPropagation();
 			}else{
@@ -127,7 +126,9 @@ betaApp.controller("workshow",function($element,$scope,$rootScope){
 		"picSrc" : "/image/study.betahouse.us.png",
 		"content" : "链接:http://betahouse.us'"
 	}];
-
+	$scope.hello=function(){
+		window.alert(0);
+	}
 	$scope.isPanelShow = $rootScope.isPanelShow;
 	var _this = $element[0];
 	setTimeout(function(){
@@ -136,9 +137,9 @@ betaApp.controller("workshow",function($element,$scope,$rootScope){
 			outer[i].style.left=i%3*280+"px"
 			outer[i].style.top=parseInt(i/3)*190+"px"
 		};
-	},0)
+	},0);
 	$scope.showWork = function(arg,e){
-		var e = e||event;
+		var e = e ? e : window.event;
 		$rootScope.isPanelShow=true;
 		$rootScope.conhead = $scope.works[arg].name;
 		$rootScope.content = $scope.works[arg].content;
