@@ -19,22 +19,20 @@ betaApp.controller("grouplogo",function($scope,$rootScope){
 	$scope.groups=[{
 		"id":"qd",
 		"groupName":"前端部",
-		"content":"喜欢代码，无需设计，愿意投入一定的时间和精力去学习。"
+		"content":"HTML、CSS和JavaScript的使用"
 	},{
 		"id":"ht",
 		"groupName":"后台部",
-		"content":"php后台的使用"
+		"content":"PHP与NodeJs使用"
 
 	},{
 		"id":"fwq",
 		"groupName":"服务器",
-		"content":"有一定的了解，并愿意花时间和精力去学习更多。"
-
+		"content":"Linux Apache 环境的配置"
 	},{
 		"id":"yy",
 		"groupName":"设计",
-		"content":"对网站的设计有一定的想法，并且愿意去学习photoshop等工具"
-
+		"content":"工作室网页的设计 效果的呈现"
 	}];
 	$scope.groupShow=function(arg,e){
 		$rootScope.isPanelShow=true;
