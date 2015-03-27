@@ -58,7 +58,7 @@ body{
 	text-align: center;
 }
 #view{
-	background: url(/image/index-background.jpg);
+	background: url("/image/overlay2.png"), url("/image/overlay3.svg"), linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
 	height: 100%;
 	padding-top: 80px;
 }
@@ -219,6 +219,12 @@ body{
 	-webkit-animation:1.5s scalefn;
 		animation:1.5s scalefn;
 }
+#grouplogo>div[grouplogo]:hover{
+	opacity: 0.5;
+		filter: alpha(opacity=50);
+		-webkit-transform:scale(0.8);
+			transform:scale(0.8);
+}
 #grouplogoinner{
   	width: 150px;
 	position: relative;
@@ -231,6 +237,8 @@ body{
 		transform:scale(0.7);
 	width: 250px;
 	margin: auto;
+	transition:transform .8s;
+	-webkit-transition:transform .8s;
 }
 #grouplogoinner>div{
 	border-radius: 75px;
@@ -410,13 +418,13 @@ body{
 	height: 287px;
 	-webkit-perspective:800px;
 	-webkit-transform-style:preserve-3d;
-	-webkit-transform-origin: 50% 50%;
+	-webkit-transform-origin: 0% 50%;
 	-webkit-transform:translateX(-172px);
 	-webkit-transition:-webkit-transform 1.5s;
 
 		perspective:800px;
 		transform-style:preserve-3d;
-		transform-origin: 50% 50%;
+		transform-origin: 0% 50%;
 		transform:translateX(-172px);
 		transition:	transform 1.5s;
 }
@@ -431,36 +439,25 @@ body{
 	position: absolute;
 	left: 172px;
 	-webkit-transform-style:preserve-3d;
-	-webkit-transform-origin: 0% 0%;
+	-webkit-transform-origin: 0% 50%;
 
 		transform-style:preserve-3d;
-		transform-origin: 0% 0%;
+		transform-origin: 0% 50%;
 }
 #wrapper .box img{
 	width: 100%;
-	height: 100%;
+	height: auto;
+	cursor: pointer;
 }
 #wrapper .show:hover{
 	-webkit-filter:blur(4px);
 		filter:blur(4px);
 }
-#wrapper .box[index="1"]{
-	background: red;
-}
-#wrapper .box[index="2"]{
-	background: yellow;
-}
-#wrapper .box[index="3"]{
-	background: green;
-}
-#wrapper .box[index="4"]{
-	background: black;
-}
-#wrapper .box[index="5"]{
-	background: red;
-}
 #wrapper .box[index="0"]{
 	background: white;
+}
+#wrapper .box[index="0"]>div:nth-child(1){
+	padding-top: 100px;
 }
 #wrapper .box[act='notpre-active']{
 	-webkit-transform:rotateY(0);
@@ -491,10 +488,8 @@ body{
 #events{
 	-webkit-transform-style:preserve-3d;
 	-webkit-transform-origin: 0% 0%;
-
 	transform-style:preserve-3d;
 	transform-origin: 0% 0%;
-
 	-webkit-perspective:800px;
 	perspective:800px;
 	position: relative;
@@ -510,7 +505,7 @@ body{
 	font-size: 18px;
 	line-height: 43px;
 	text-align: center;
-	border: 2px solid blue;
+	border: 2px solid #eee;
 	-webkit-transform:rotateY(45deg);
 	transform:rotateY(45deg);
 	-webkit-transition:-webkit-transform 0.8s;
@@ -531,6 +526,7 @@ body{
 	padding: 25px;
 	font-size: 25px;
 	text-indent: 50px;
+	border-radius: 5px;
 }
 #ganzi{
 	background: url(/image/ganzi.png);
