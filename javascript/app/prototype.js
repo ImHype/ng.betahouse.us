@@ -25,11 +25,6 @@ gallery.prototype={
 	digui:function (obj){
 		var oDiv = document.createElement('div');
 		var _this = this;
-		// oDiv.className = "box";
-		// oDiv.innerHTML+=obj;
-		// oDiv.setAttribute('index',this.count);
-		// oDiv.setAttribute('ng-click',"showMenber("+this.count+")");
-		// this.oParent.appendChild(oDiv);
 		this.oParent.innerHTML += '<div class="box" index="'+this.count+'" ng-click=showMenber('+this.count+')'+'>'+obj+'</div>'
 		var oDiv = getByClass(this.oParent,"box")[0];
 		if(this.count>=0&&this.count<=3){

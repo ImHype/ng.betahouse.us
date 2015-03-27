@@ -52,7 +52,16 @@ betaApp.controller("overController",function($element,$scope,$rootScope){
 		$rootScope.isPanelShow = false;
 	}
 });
-
+betaApp.controller("menberinit",function(){
+	new gallery().conf({
+		1:'<div><img src="/image/1.jpg"></div>',
+		2:'<div><img src="/image/2.jpg"></div>',
+		3:'<div><img src="/image/3.jpg"></div>',
+		4:'<div><img src="/image/4.jpg"></div>',
+		5:'<div><img src="/image/1.jpg"></div>',
+		6:'<div><img src="/image/2.jpg"></div>'
+	});
+})
 betaApp.controller("menbershow",function($element,$scope,$rootScope){
 	
 	$scope.menbers = [
@@ -69,24 +78,23 @@ betaApp.controller("menbershow",function($element,$scope,$rootScope){
 	},{"name":"许骏宇",
 	"content":"开心快乐"
 	}];
-	setTimeout(function(){
-		var oBox = getByClass($element[0],"box");
-		for (var i = 0; i < oBox.length; i++) {
-			oBox[i].index = i;
-			oBox[i].onclick=function(e){
-				var n = this.index;
-				$rootScope.isPanelShow=true;
-				$rootScope.conhead = $scope.menbers[n].name;
-				$rootScope.content = $scope.menbers[n].content;
-				var e = e||event;
-				if(e.stopPropagation){
-					e.stopPropagation();
-				}else{
-					e.cancelBubble=true;
-				}
+	$scope.aaaa="aaa";
+	var oBox = getByClass($element[0],"box");
+	for (var i = 0; i < oBox.length; i++) {
+		oBox[i].index = i;
+		oBox[i].onclick=function(e){
+			var n = this.index;
+			$rootScope.isPanelShow=true;
+			$rootScope.conhead = $scope.menbers[n].name;
+			$rootScope.content = $scope.menbers[n].content;
+			var e = e||event;
+			if(e.stopPropagation){
+				e.stopPropagation();
+			}else{
+				e.cancelBubble=true;
 			}
-		};
-	})
+		}
+	};
 });
 
 betaApp.controller("workshow",function($element,$scope,$rootScope){

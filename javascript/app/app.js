@@ -10,7 +10,8 @@ betaApp.config(['$routeProvider',function ($routeProvider) {
 	}).when('/work',{
 		templateUrl:"/view/work.html"
 	}).when('/menbers',{
-		templateUrl:"/view/menbers.html"
+		template:'<div id="menbershow" ng-controller="menbershow"><div id="wrapper" grouplogo></div></div>',
+		controller:"menberinit"
 	}).when('/history',{
 		templateUrl:"/view/history.html"
 	}).when('/join',{

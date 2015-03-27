@@ -28,19 +28,3 @@ betaApp.directive('grouplogo',function(){
 		}
 	}
 });
-betaApp.directive("menber",function(){
-	return {
-		restrict:"EACM",
-		template:"nihaoa",
-		compile:function(scope, elem, attrs){
-			new gallery().conf({
-				1:'<div><img src="/image/1.jpg"></div>',
-				2:'<div><img src="/image/2.jpg"></div>',
-				3:'<div><img src="/image/3.jpg"></div>',
-				4:'<div><img src="/image/4.jpg"></div>',
-				5:'<div><img src="/image/1.jpg"></div>',
-				6:'<div><img src="/image/2.jpg"></div>'
-			});
-		}
-	}
-});
