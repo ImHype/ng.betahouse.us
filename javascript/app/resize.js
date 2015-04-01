@@ -19,13 +19,15 @@ setInterval(function(){
 	drawOverFlow();
 },30);
 addEvent(window,"load",removeWrap);
-addEvent(window,"load",function(){
-	var oLink = document.createElement("link");
-	oLink.href="/stylesheet/css/indexAnimation.css";
-	oLink.rel="stylesheet";
-	oLink.type="text/css";
-	document.head.appendChild(oLink);
-});
+// addEvent(window,"load",function(){
+// 	var oLink = document.createElement("link");
+// 	var Ohead = document.getElementsByTagName('head')[0];
+// 	Ohead = document.head || Ohead;
+// 	oLink.setAttribute("href","/stylesheet/css/indexAnimation.css");
+// 	oLink.setAttribute("rel","stylesheet");
+// 	oLink.setAttribute("type","text/css");
+// 	Ohead.appendChild(oLink);
+// });
 
 
 function addEvent(obj,type,handle) {
