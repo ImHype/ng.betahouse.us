@@ -11,15 +11,22 @@ gallery.prototype={
 		this.wrapper = oWrapper = document.getElementById("wrapper");
 		this.oParent = this.wrapper;
 		this.actArray = ['pre-active','now-active','next-active','over-active'];
-		this.count = 0;
+		this.count = -2;
 		for(var attr in this.json){
 
 			this.digui(this.json[attr]);
 		}
 		this.active = this.getActive(this.aBox);
 		var keydn =this.keydn;
+		var changeActive = this.changeActive;
 		addEvent(document,"keydown",function(e){
 			keydn.call(_this);
+		});
+		addEvent(document.getElementById('prev'),'click',function(e){
+			changeActive.call(_this,"prev");
+		});
+		addEvent(document.getElementById('next'),'click',function(e){
+			changeActive.call(_this,"next");
 		});
 	},
 	digui:function (obj){
@@ -55,6 +62,29 @@ gallery.prototype={
 		if(aBox[active+2]){
 			aBox[active+2].setAttribute("act","over-active");
 		}
+	},
+	changeActive:function(type){
+		var _this = this;
+
+		switch (type){
+			case "prev":
+				if(_this.active>0){
+					this.active--; 
+				}else{
+					this.active = _this.aBox.length-1;
+				}
+				break;
+			case "next":
+				if(_this.active<_this.aBox.length-1){
+					this.active++;
+				}else{
+					this.active = 0;
+				}
+				break;
+		}
+		_this.setAct();
+		this.wrapper.style.WebkitTransform="translateX("+(this.active)*(-172)+"px)";
+		this.wrapper.style.MozTransform="translateX("+(this.active)*(-172)+"px)";
 	},
 	keydn:function(e){
 		var _this = this;

@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html ng-app="beta">
 <meta charset="utf-8">
+<meta name="author" content="JunyuXu">
+<meta name="keywords" content="betahouse">
+<meta name="description" content="来自于angularjs的betahouse官网，二次修改，只支持chrome、火狐浏览器">
 <head>
 	<title>β-house 工作室</title>
 	<script type="text/javascript" src="javascript/libs/angular.min.js"></script>
 	<script type="text/javascript" src="javascript/libs/angular-route.min.js"></script>
+	<script type="text/javascript" src="javascript/libs/angular-animate.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="stylesheet/libs/reset.css">
 	<link rel="stylesheet" type="text/css" href="stylesheet/css/index.css">
 	<link rel="stylesheet" type="text/css" href="stylesheet/css/indexAnimation.css">
 </head>
-<body ng-keydown="closeDialog(event)">
-	<div id="canvaswrap">
-		<canvas id="loading" width="120" height="120">
-			您的浏览器不支持canvas
-		</canvas>
-		<h2>Loading...</h2>
-	</div>
-	<div id="main">
-		<div id="head">
-			<div id="headcon">
-				<h2 class="title-hover">
-					<a href="#/">β-HOUSE</a>
-				</h2>
-				<ul class="nav">
-					<li>
-						<a href="#/">主页</a>
-					</li>
-					<li>
-						<a href="#/group">部门</a>
-					</li>
-					<li class="dropdown">
-						<a href="#/work">信息</a>
-						<ul>
-							<li><a href="#/work">作品展示</a></li>
-							<li><a href="#/menbers">成员展示</a></li>
-							<li><a href="#/history">发展历史</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="http://join.betahouse.us">加入我们</a>
-					</li>
-					<li>
-						<a href="#/bbs">BBS</a>
-					</li>
-				</ul>
+<body >
+	<div my-over>
+		<div my-loader id="canvaswrap"></div>
+		<div id="main">
+			<div id="head">
+				<div id="headcon">
+					<h2 class="title-hover">
+						<a href="#/">β-House</a>
+					</h2>
+					<ul class="nav">
+						<li>
+							<a href="#/">β-House</a>
+						</li>
+						<li>
+							<a href="#/group">工作室</a>
+						</li>
+						<li class="dropdown">
+							<a href="#/work">我们</a>
+							<ul>
+								<li><a href="#/work">作品展示</a></li>
+								<li><a href="#/menbers">成员展示</a></li>
+								<li><a href="#/history">发展历史</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="http://join.betahouse.us">要一起</a>
+						</li>
+						<li>
+							<a href="http://study.betahouse.us">前进</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="view" ng-view>
 			</div>
 		</div>
-		<div id="view" ng-view>
-		</div>
 	</div>
-	<div id="over" over ng-controller="overController" ng-show="isPanelShow"></div>
-	<script type="text/javascript" src="/javascript/app/prototype.js"></script>
+	<script type="text/javascript" src="javascript/app/prototype.js"></script>
 	<script type="text/javascript" src="javascript/app/app.js"></script>
 	<script type="text/javascript" src="javascript/app/controller.js"></script>
 	<script type="text/javascript" src="javascript/app/directive.js"></script>

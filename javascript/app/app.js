@@ -1,7 +1,7 @@
-var betaApp = angular.module("beta",['ngRoute']);
+var betaApp = angular.module("beta",['ngRoute','ngAnimate']);
 /*
-	Config Route
-	*/
+Config Route
+*/
 betaApp.config(['$routeProvider',function ($routeProvider) {
 	$routeProvider.when("/",{
 		templateUrl:"/view/index.html"
@@ -10,12 +10,14 @@ betaApp.config(['$routeProvider',function ($routeProvider) {
 	}).when('/work',{
 		templateUrl:"/view/work.html"
 	}).when('/menbers',{
-		template:'<div id="menbershow" ng-controller="menbershow"><div id="wrapper" grouplogo></div></div>',
-		controller:"menberinit"
+		template:'<div id="wrapper" menbershow></div>\
+		<div id="menbersBtn">\
+		<button id="prev">prev</button>\
+		<button id="next">next</button>\
+		</div>',
 	}).when('/history',{
 		templateUrl:"/view/history.html"
 	}).when('/bbs',{
 		templateUrl:"/view/bbs.html"
-		
 	})
 }]);

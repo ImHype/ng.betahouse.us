@@ -22,8 +22,6 @@ body{
 }
 .dropdown>ul{
 	padding-left: 0;
-	background: #fff;
-	padding: 0 20px;
 	height: 0;
 	overflow: hidden;
 	-webkit-transition : all 0.5s;
@@ -31,6 +29,13 @@ body{
 .dropdown:hover>ul{
 	height: 171px;
 	opacity: 1;
+	border-radius: 2px;
+}
+.dropdown>ul>li{
+	padding: 0px 20px;
+	margin: 1px 0;
+	border-radius: 2px;
+	background: #fff;
 }
 .dropdown>ul>li>a{
 	font-size: 16px;
@@ -58,14 +63,17 @@ body{
 	text-align: center;
 }
 #view{
-	background: url("/image/overlay2.png"), url("/image/overlay3.svg"), linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
-	height: 100%;
+	background: url("/image/overlay2.png"), 
+	url("/image/overlay3.svg"), 
+	linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
+	height: 100vh;
 	padding-top: 80px;
 }
 #index-body{
 	position: relative;
 	width: 1092px;
 	margin: 0 auto;
+	margin-top:0px;
 }
 /*indexview*/
 #logo{
@@ -73,6 +81,9 @@ body{
 	height: 100%;
 	position: relative;
 	margin: 0 auto;
+}
+#logo{
+	background: red;
 	-webkit-transform:scale(0.8);
 	transform:scale(0.8);
 	-webkit-animation:0.8s fly2 forwards;
@@ -386,6 +397,8 @@ body{
 	height: 400px;
 	position: relative;
 	margin-top: 60px;
+	-webkit-animation : .8s hello forwards;
+	animation : .8s hello forwards;
 }
 #workshow>.outer{
 	width: 220px;
@@ -394,6 +407,9 @@ body{
 	padding: 15px;
 	border-radius: 5px;
 	position: absolute;
+	-webkit-animation : .8s hello forwards;
+	animation : .8s hello forwards;
+	
 }
 #workshow>div>.inner{
 	border: 1px solid #fff;
@@ -417,16 +433,24 @@ body{
 	width: 1750px;
 	height: 287px;
 	-webkit-perspective:800px;
+	-ms-perspective:800px;
 	-webkit-transform-style:preserve-3d;
+	-ms-transform-style:preserve-3d;
 	-webkit-transform-origin: 0% 50%;
-	-webkit-transform:translateX(-172px);
+	-ms-transform-origin: 0% 50%;
+	-webkit-transform:translateX(0);
+	-ms-transform:translateX(0);
 	-webkit-transition:-webkit-transform 1.5s;
+	-ms-transition:-ms-transform 1.5s;
 
 		perspective:800px;
 		transform-style:preserve-3d;
 		transform-origin: 0% 50%;
-		transform:translateX(-172px);
+		transform:translateX(0);
 		transition:	transform 1.5s;
+		
+	-webkit-animation : 1.5s slip forwards;
+	animation : 1.5s slip forwards;
 }
 #wrapper div{
 	width: 172px;
@@ -438,8 +462,11 @@ body{
 #wrapper .box{
 	position: absolute;
 	left: 172px;
+	background:#fff;
 	-webkit-transform-style:preserve-3d;
+	-ms-transform-style:preserve-3d;
 	-webkit-transform-origin: 0% 50%;
+	-ms-transform-origin: 0% 50%;
 
 		transform-style:preserve-3d;
 		transform-origin: 0% 50%;
@@ -456,28 +483,33 @@ body{
 #wrapper .box[index="0"]{
 	background: white;
 }
-#wrapper .box[index="0"]>div:nth-child(1){
+#wrapper .box[index="-2"]>div:nth-child(1){
 	padding-top: 100px;
 }
 #wrapper .box[act='notpre-active']{
 	-webkit-transform:rotateY(0);
 		transform:rotateY(0);
+		-ms-transform:rotateY(0);
 }
 #wrapper .box[act='pre-active']{
 	-webkit-transform:rotateY(-45deg);
 		transform:rotateY(-45deg);
+		-ms-transform:rotateY(-45deg);
 }
 #wrapper .box[act='now-active']{
 	-webkit-transform:rotateY(45deg);
 		transform:rotateY(45deg);
+		-ms-transform:rotateY(45deg);
 }
 #wrapper .box[act='next-active']{
 	-webkit-transform:rotateY(45deg);
 		transform:rotateY(45deg);
+		-ms-transform:rotateY(45deg);
 }
 #wrapper .box[act='over-active']{
 	-webkit-transform:rotateY(-45deg);
 		transform:rotateY(-45deg);
+		-ms-transform:rotateY(-45deg);
 }
 #history{
 	width: 1092px;
@@ -494,7 +526,6 @@ body{
 	perspective:800px;
 	position: relative;
 	z-index: 3
-
 }
 #events span{
 	display: block;
@@ -511,6 +542,7 @@ body{
 	-webkit-transition:-webkit-transform 0.8s;
 	transition:transform 0.8s;
 	cursor: pointer;
+	color: #666;
 }
 #events span:hover{
 	-webkit-transform:rotateY(0);
@@ -543,4 +575,18 @@ body{
 	line-height: 450px;
 	font-size: 50px;
 	color: #fff;
+}
+#menbersBtn{
+	position: absolute;
+	bottom: 20px;
+	right: 100px;
+}
+#menbersBtn button{
+	border: 1px solid #999;
+	background: #fff;
+	color: #333;
+	padding:10px 35px;
+	margin-right: 10px;
+	border-radius: 15px;
+	box-shadow: 0px 0px 10px blue;
 }

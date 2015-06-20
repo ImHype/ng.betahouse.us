@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="angular.js"></script>
+</head>
+<body>
+	<div my-directive></div>
+	<script>
+	angular.module("myapp",[]).directive("myDirective",function  () {
+		return {
+			restrict:"A",
+			template:"<div>{{nihao}}</div>",
+			controller:function($scope){
+				$scope.nihao="nihao";
+				$scope.click=function(){
+					alert(0);
+				}
+			},
+			link:function(scope,element,attrs){
+				element.bind("click",function(){
+					console.log(element)
+					alert(0)
+					scope.$apply(scope.nihao = "nihao2");
+				})
+			}
+		}
+	})
+	</script>
+</body>
+</html>
