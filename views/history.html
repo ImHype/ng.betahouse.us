@@ -1,10 +1,11 @@
 <div ng-controller="history" id="history">
 	<div id="events">
-		<span ng-repeat="event in events" ng-click="changeCon($index)">
-			{{ event.time }}
-		</span>
+		<div ng-repeat="event in events" ng-click="changeCon($index)">
+			<div class="circle">{{$index+1}}</div>
+			<span>{{ event.time }}</span>
+		</div>
 	</div>
-	<div id="ganzi"></div>
+	<!-- <div id="ganzi"></div> -->
 	<div id="eventContent">
 		{{ eventContent }}
 	</div>
