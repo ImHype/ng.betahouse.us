@@ -36,14 +36,11 @@ var i=0;
 
 
 window.onload = function(){
-	oCanvas.onclick=function(){
-		alert(0)
-	}
 	removeWrap();
-	do{
-		loadImage(imgList[i]);	
-		i++;
-	}while(i<imgList.length);
+	// do{
+	// 	loadImage(imgList[i]);	
+	// 	i++;
+	// }while(i<imgList.length);
 };
 
 function computedNum (){
