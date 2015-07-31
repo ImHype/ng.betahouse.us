@@ -50,7 +50,6 @@ betaApp.controller("workshow",function($element,$scope,$rootScope,groupService,$
 	groupService.getJson("work.json").success(function(data){
 		$scope.works = data;
 		$scope.isPanelShow = $rootScope.isPanelShow;
-		console.log(data)
 		setTimeout(function(){
 			var outer = _this.getElementsByClassName("outer");
 			for (var i = 0; i < outer.length; i++) {
