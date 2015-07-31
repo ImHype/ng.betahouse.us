@@ -108,13 +108,14 @@ betaApp.directive("myLoader",function(){
 			},30);
 
 			var i=0;
-			do{
-				loadImage(imgList[i]);	
-				i++;
-			}while(i<imgList.length);
+			
 
 			angular.element(window).bind("load",function(){
 				removeWrap();
+				do{
+					loadImage(imgList[i]);	
+					i++;
+				}while(i<imgList.length);
 			});
 
 			function computedNum (){
