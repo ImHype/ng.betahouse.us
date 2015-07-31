@@ -18,23 +18,21 @@ body{
 	top: 0;
 	z-index: 101;
 }
-.dropdown{
-}
+
 .dropdown>ul{
 	padding-left: 0;
 	height: 0;
 	overflow: hidden;
 	-webkit-transition : all 0.5s;
+	
 }
 .dropdown:hover>ul{
 	height: 171px;
 	opacity: 1;
-	border-radius: 2px;
+	border:1px solid #eee;	
 }
 .dropdown>ul>li{
-	padding: 0px 20px;
-	margin: 1px 0;
-	border-radius: 2px;
+	padding: 0px 15px;
 	background: #fff;
 }
 .dropdown>ul>li>a{
@@ -61,6 +59,9 @@ body{
 	float: left;
 	font-size: 18px;
 	text-align: center;
+}
+.nav>li>a.active{
+	color: rgb(41,171,226)
 }
 #view{
 	background: 
@@ -393,7 +394,7 @@ body{
 	display: inline-block;
 	width: 25px;
 	height: 25px;
-	background: url("/image/close.svg");
+	background: url("/static/image/close.svg");
 	position: absolute;
 	top: 25px;
 	right: 25px;
@@ -446,19 +447,19 @@ body{
 	-ms-transform-style:preserve-3d;
 	-webkit-transform-origin: 0% 50%;
 	-ms-transform-origin: 0% 50%;
-	-webkit-transform:translateX(0);
-	-ms-transform:translateX(0);
-	-webkit-transition:-webkit-transform 1.5s;
-	-ms-transition:-ms-transform 1.5s;
+	-webkit-transform:translateX(-516px);
+	-ms-transform:translateX(-516px);
+	-webkit-transition:-webkit-transform 0.8s;
+	-ms-transition:-ms-transform 0.8s;
 
 		perspective:800px;
 		transform-style:preserve-3d;
 		transform-origin: 0% 50%;
-		transform:translateX(0);
-		transition:	transform 1.5s;
+		transform:translateX(-516px);
+		transition:	transform 0.8s;
 		
-	-webkit-animation : 1.5s slip forwards;
-	animation : 1.5s slip forwards;
+	-webkit-animation : 0.8s slip ;
+	animation : 0.8s slip ;
 }
 #wrapper div{
 	width: 172px;
@@ -523,7 +524,9 @@ body{
 	width: 1092px;
 	margin: auto;
 	position: relative;
-	margin-top: 60px;
+	overflow: hidden;
+	margin-top: 100px;
+	height: 400px;
 }
 #events{
 	-webkit-transform-style:preserve-3d;
@@ -533,24 +536,66 @@ body{
 	-webkit-perspective:800px;
 	perspective:800px;
 	position: relative;
-	z-index: 3
+	z-index: 3;
+	margin-top: 40px;
+	margin-left: 50px;
+}
+#events .circle {
+	width: 46px;
+	height: 46px;
+	border-radius: 25px;
+	background: rgb(41,171,226);
+	border: 2px solid #fff;
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	line-height: 46px;
+	margin-bottom: 20px;
+	transition:all .5s;
+	-webkit-transition:all .5s;
+}
+#events>div {
+	position: relative;
+}
+#events>div:hover>.circle {
+	background: #fff;
+	border: 2px solid rgb(41,171,226);
+	color: rgb(41,171,226);
+	cursor:pointer;
+}
+#events>div:hover>span {
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+	left: 80px;
 }
 #events span{
-	display: block;
 	width: 170px;
-	height: 43px;
-	background: #fff;
-	margin-top: 10px;
+	height: 50px;
+	background: #333;
+	filter:alpha(opacity=0);
+	opacity: 0;
 	font-size: 18px;
-	line-height: 43px;
+	line-height: 50px;
 	text-align: center;
-	border: 2px solid #eee;
-	-webkit-transform:rotateY(45deg);
-	transform:rotateY(45deg);
-	-webkit-transition:-webkit-transform 0.8s;
-	transition:transform 0.8s;
 	cursor: pointer;
-	color: #666;
+	color: #fff;
+	border-radius: 3px;
+	position: absolute;
+	left: 160px;
+	top: 0;
+	transition:all .8s;
+}
+#events span::before {
+	content: " ";
+	display: block;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+	position: absolute;
+	left: -10px;
+	top: 20px;
+	border-top: 5px solid transparent;
+  border-right: 10px solid #333;
+  border-bottom: 5px solid transparent;
 }
 #events span:hover{
 	-webkit-transform:rotateY(0);
@@ -558,18 +603,21 @@ body{
 }
 #eventContent{
 	width: 600px;
-	height: 400px;
+	height: 300px;
 	position: absolute;
 	right: 0;
 	top: 0;
 	background: #fff;
-	padding: 25px;
+	padding: 60px 25px;
 	font-size: 25px;
 	text-indent: 50px;
 	border-radius: 5px;
+	border:1px solid rgb(36,80,255);
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 }
 #ganzi{
-	background: url(/image/ganzi.png);
+	background: url(/static/image/ganzi.png);
 	width: 40px;
 	height: 400px;
 	position: absolute;

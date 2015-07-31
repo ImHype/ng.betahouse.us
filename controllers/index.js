@@ -19,14 +19,14 @@ betaApp.factory("groupService",function($http){
 });
 
 betaApp.controller("grouplogo",function($scope,$http,groupService){
-	groupService.getJson("/tuandui.json").success(function(data){
+	groupService.getJson("tuandui.json").success(function(data){
 		$scope.groups = data;
-	})
-	$scope.groupShow=function(arg){
-		$scope.head = $scope.groups[arg]["groupName"];
-		$scope.content = $scope.groups[arg]["content"];
-		$scope.$emit("openOver");
-	}
+		$scope.groupShow=function(arg){
+			$scope.head = $scope.groups[arg]["groupName"];
+			$scope.content = $scope.groups[arg]["content"];
+			$scope.$emit("openOver");
+		}
+	});
 });
 betaApp.controller("overController",function($element,$scope,$rootScope){
 	$scope.closePanel=function(){
@@ -37,66 +37,53 @@ betaApp.controller("overController",function($element,$scope,$rootScope){
 betaApp.controller("menbershow",function($element,$scope,groupService){
 	groupService.getJson("menbers.json").success(function(data){
 		$scope.menbers = data;
-	})
-
-	$scope.groupShow=function(arg){
-		$scope.head = $scope.menbers[arg]["groupName"];
-		$scope.content = $scope.menbers[arg]["content"];
-		$scope.$emit("openOver");
-	}
+		$scope.groupShow=function(arg){
+			$scope.head = $scope.menbers[arg]["groupName"];
+			$scope.content = $scope.menbers[arg]["content"];
+			$scope.$emit("openOver");
+		}
+	});
 });
 
-betaApp.controller("workshow",function($element,$scope,$rootScope){
-	$scope.works=[{
-		"name" : "β-house招新网",
-		"picSrc" : "/image/join.betahouse.us.png",
-		"content" : "链接:http://join.betahouse.us"
-	},{
-		"name" : "β-house官网",
-		"picSrc" : "/image/betahouse.us.png",
-		"content" : "链接:http://betahouse.us"
-	},{
-		"name" : "β妹",
-		"picSrc" : "/image/betagirl.png",
-		"content" : "betahouse吉祥物"
-	},{
-		"name" : "β-house学习网",
-		"picSrc" : "/image/study.betahouse.us.png",
-		"content" : "链接:http://betahouse.us'"
-	}];
-
-	$scope.isPanelShow = $rootScope.isPanelShow;
+betaApp.controller("workshow",function($element,$scope,$rootScope,groupService,$timeout){
 	var _this = $element[0];
-	setTimeout(function(){
-		var outer = _this.getElementsByClassName("outer");
-		for (var i = 0; i < outer.length; i++) {
-			outer[i].style.left=i%3*280+"px"
-			outer[i].style.top=parseInt(i/3)*190+"px"
-		};
-	},0);
-	$scope.showWork = function(arg,e){
-		var e = e ? e : window.event;
-		$rootScope.isPanelShow=true;
-		$rootScope.conhead = $scope.works[arg].name;
-		$rootScope.content = $scope.works[arg].content;
-		if(e.stopPropagation){
-			e.stopPropagation();
-		}else{
-			e.cancelBubble=true;
+	groupService.getJson("work.json").success(function(data){
+		$scope.works = data;
+		$scope.isPanelShow = $rootScope.isPanelShow;
+		console.log(data)
+		setTimeout(function(){
+			var outer = _this.getElementsByClassName("outer");
+			for (var i = 0; i < outer.length; i++) {
+				outer[i].style.left=i%3*280+"px"
+				outer[i].style.top=parseInt(i/3)*190+"px"
+			};
+		},0);
+		$scope.showWork = function(arg,e){
+			var e = e ? e : window.event;
+			$rootScope.isPanelShow=true;
+			$rootScope.conhead = $scope.works[arg].name;
+			$rootScope.content = $scope.works[arg].content;
+			if(e.stopPropagation){
+				e.stopPropagation();
+			}else{
+				e.cancelBubble=true;
+			}
 		}
-	}
+	});
+
+	
 });
 
 betaApp.controller('history',["$element","$scope",function($element,$scope){
 	$scope.events=[{
 		"time":"2010.9.1",
-		"content":"betahouse工作室成立"
+		"content":"betahouse工作室成立,最初由6名成员构成，分别是朱力，何工，陈昌迪，孙玢，陶靖，谢嘉骏学长们。"
 	},{
-		"time":"2012.5.25",
-		"content":"betahouse工作室第一次被评为杭电新青年团队"
+		"time":"2014.3~2014.5",
+		"content":"betahouse工作室举行第一次校内web培训，并开展招新活动。"
 	},{
 		"time":"2015.5.30",
-		"content":"betahouse工作室第二次被评为杭电科技之星，星青年团队"
+		"content":"betahouse工作室被评为杭电科技之星，星青年团队，得到了学校里的肯定。"
 	}];
 	$scope.eventContent = $scope.events[0]["content"];
 	$scope.changeCon=function(arg){

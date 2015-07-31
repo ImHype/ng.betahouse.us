@@ -207,7 +207,7 @@
 		
 	}
 	100% {
-		-webkit-transform:translateX(-172px);
+		-webkit-transform:translateX(-516px);
 	}
 }
 @keyframes slip{
@@ -216,6 +216,6 @@
 		
 	}
 	100% {
-		transform:translateX(-172px);
+		transform:translateX(-516px);
 	}
 }

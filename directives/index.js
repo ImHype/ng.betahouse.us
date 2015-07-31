@@ -84,7 +84,7 @@ betaApp.directive("myLoader",function(){
 				"hly.jpg",
 				"join.betahouse.us.png",
 				"llh.jpg",
-				"logo.jpg",
+				"logo.png",
 				"lyq.jpg",
 				"pbj.jpg",
 				"study.betahouse.us.png",
@@ -201,16 +201,16 @@ betaApp.directive("menbershow",function(){
 		link:function(scope,element,attrs){
 			console.log(scope.groupShow)
 			new gallery().conf({
-				1:'<div><img src="/image/logo.png"></div>',
-				2:'<div><img src="/image/hbb.jpg"></div>',
-				3:'<div><img src="/image/hll.jpg"></div>',
-				4:'<div><img src="/image/yjm.jpg"></div>',
-				5:'<div><img src="/image/hly.jpg"></div>',
-				6:'<div><img src="/image/llh.jpg"></div>',
-				7:'<div><img src="/image/lyq.jpg"></div>',
-				8:'<div><img src="/image/wt.jpg"></div>',
-				9:'<div><img src="/image/xzy.jpg"></div>',
-				10:'<div><img src="/image/yg.jpg"></div>'
+				1:'<div><img src="/static/image/logo.png"></div>',
+				2:'<div><img src="/static/image/hbb.jpg"></div>',
+				3:'<div><img src="/static/image/hll.jpg"></div>',
+				4:'<div><img src="/static/image/yjm.jpg"></div>',
+				5:'<div><img src="/static/image/hly.jpg"></div>',
+				6:'<div><img src="/static/image/llh.jpg"></div>',
+				7:'<div><img src="/static/image/lyq.jpg"></div>',
+				8:'<div><img src="/static/image/wt.jpg"></div>',
+				9:'<div><img src="/static/image/xzy.jpg"></div>',
+				10:'<div><img src="/static/image/yg.jpg"></div>'
 			});
 			var oBox = angular.element(getByClass(document.getElementById('wrapper'),"box"));
 			for (var i = 0; i < oBox.length; i++) {
