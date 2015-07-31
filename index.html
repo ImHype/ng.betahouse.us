@@ -12,7 +12,13 @@
 </head>
 <body >
 	<div my-over>
-		<div my-loader id="canvaswrap"></div>
+	</div>
+		<div id="canvaswrap">
+			<canvas id="loading" width="120" height="120">
+				您的浏览器不支持canvas
+			</canvas>
+			<h2>Loading...</h2>
+		</div>
 		<div id="main">
 			<div id="head">
 				<div id="headcon">
@@ -21,7 +27,7 @@
 					</h2>
 					<ul class="nav">
 						<li>
-							<a href="#/" class="active">β-House</a>
+							<a href="#/">β-House</a>
 						</li>
 						<li>
 							<a href="#/group">工作室</a>
@@ -46,7 +52,7 @@
 			<div id="view" ng-view>
 			</div>
 		</div>
-	</div>
+	<script type="text/javascript" src="static/javascript/libs/loader.js"></script>
 	<script type="text/javascript" src="static/javascript/libs/angular.min.js"></script>
 	<script type="text/javascript" src="static/javascript/libs/angular-route.min.js"></script>
 	<script type="text/javascript" src="static/javascript/libs/angular-animate.min.js"></script>

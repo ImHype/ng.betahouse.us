@@ -119,27 +119,4 @@ gallery.prototype={
 		return this.active;
 	}
 }
-function getByClass (parent,sclass) {
-	if(parent.getElementsByClassName){
-		return parent.getElementsByClassName(sclass);
-	}else if(parent.querySelector){
-		return parent.querySelector("."+sclass);
-	}
-	else {
-		var results = [];
-		var aEle = parent.getElementsByTagName('*');
-		for (var i = 0; i < aEle.length; i++) {
-			if(new RegExp("\s|$"+aEle+"\s|^").test(aEle[i].className)){
-				results.push(aEle[i]);
-			}
-		};
-		return results;
-	}
-}
-function addEvent (obj,type,handle) {
-	if(obj.addEventListener){
-		obj.addEventListener(type,handle,true);
-	}else{
-		obj.attachEvent("on"+type,handle);
-	}
-}
+
