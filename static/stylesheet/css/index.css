@@ -66,11 +66,10 @@ body{
 #view{
 	background: 
 	url("../../image/index-background.jpg"), 
-	url("../../image/overlay2.png"), 
-	url("../../image/overlay3.svg"), 
 	linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
 	height: 100vh;
 	padding-top: 80px;
+	background-size: 100% 100%;
 }
 #index-body{
 	position: relative;
