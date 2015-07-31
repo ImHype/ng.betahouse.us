@@ -63,8 +63,10 @@ body{
 	text-align: center;
 }
 #view{
-	background: url("/image/overlay2.png"), 
-	url("/image/overlay3.svg"), 
+	background: 
+	url("../../image/index-background.jpg"), 
+	url("../../image/overlay2.png"), 
+	url("../../image/overlay3.svg"), 
 	linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
 	height: 100vh;
 	padding-top: 80px;
@@ -111,7 +113,7 @@ body{
 	text-indent: 40px;
 }
 #logo div{
-	background:url("/image/b.png");
+	background:url("../../image/b.png");
 	background-repeat: no-repeat;
 	position: absolute;
 	-webkit-animation:1.5s fly forwards;
@@ -224,7 +226,7 @@ body{
 }
 
 #grouplogo>div[grouplogo]>div{
-	background: url("/image/b.png");
+	background: url("../../image/b.png");
 	position: absolute;
 	background-repeat: no-repeat;
 	-webkit-animation:1.5s scalefn;
@@ -248,7 +250,7 @@ body{
 		transform:scale(0.7);
 	width: 250px;
 	margin: auto;
-	transition:transform .8s;
+	transition:transform .s;
 	-webkit-transition:transform .8s;
 }
 #grouplogoinner>div{
@@ -262,20 +264,27 @@ body{
 	top: 0;
 	left: 0;
 	overflow: hidden;
-	border: 2px solid #fff;
+	border: none;
 	color: #fff;
-}
-#grouplogoinner>div{
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 	background: none!important;
+
 }
+
 #grouplogoinner>div>div{
-	-webkit-transition:all 0.8s;
+	-webkit-transition:all 0.5s ease-in-out;
 	font-size: 20px;
 	cursor: pointer;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	border:2px solid #fff;
+	border-radius: 75px;
+	height: 150px;
 }
 #grouplogoinner>div>div:nth-child(2){
 	background: #fff;
-	border-radius: 75px;
+	border-radius: 76px;
 	color: #000;
 	border: 1px solid blue;
 }
@@ -299,7 +308,6 @@ body{
 	border: blue;
 	background: #fff;
 	color: #000;
-	border-radius: 76px;
 	transition:all 0.5s;
 }
 #qd{

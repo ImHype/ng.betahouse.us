@@ -4,11 +4,11 @@ Config Route
 */
 betaApp.config(['$routeProvider',function ($routeProvider) {
 	$routeProvider.when("/",{
-		templateUrl:"/view/index.html"
+		templateUrl:"views/index.html"
 	}).when('/group',{
-		templateUrl:"/view/group.html"
+		templateUrl:"views/group.html"
 	}).when('/work',{
-		templateUrl:"/view/work.html"
+		templateUrl:"views/work.html"
 	}).when('/menbers',{
 		template:'<div id="wrapper" menbershow></div>\
 		<div id="menbersBtn">\
@@ -16,8 +16,8 @@ betaApp.config(['$routeProvider',function ($routeProvider) {
 		<button id="next">next</button>\
 		</div>',
 	}).when('/history',{
-		templateUrl:"/view/history.html"
+		templateUrl:"views/history.html"
 	}).when('/bbs',{
-		templateUrl:"/view/bbs.html"
+		templateUrl:"views/bbs.html"
 	})
 }]);

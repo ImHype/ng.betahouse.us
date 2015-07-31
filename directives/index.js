@@ -31,6 +31,8 @@ betaApp.directive('myOver',function(){
 			})
 		},
 		link:function(scope, $elem, attrs){
+			
+
 			angular.element(document).bind("keydown",function(evt){
 				if(evt.which==27){
 					scope.$apply(function(){
@@ -75,6 +77,25 @@ betaApp.directive("myLoader",function(){
 			end=2*Math.PI,
 			one=true,
 			nowAngle=0;
+			var imgList = ["b.png",
+				"ganzi.png",
+				"hbb.jpg",
+				"hll.jpg",
+				"hly.jpg",
+				"join.betahouse.us.png",
+				"llh.jpg",
+				"logo.jpg",
+				"lyq.jpg",
+				"pbj.jpg",
+				"study.betahouse.us.png",
+				"wbq.jpg",
+				"wt.jpg",
+				"xjy.jpg",
+				"xzy.jpg",
+				"yg.jpg",
+				"yjm.jpg",
+				"zcl.jpg"
+				];
 			var oWrap = element;
 			var oCanvas = element.find("canvas")[0];
 			if(oCanvas.getContext){
@@ -85,7 +106,16 @@ betaApp.directive("myLoader",function(){
 				computedNum();
 				drawOverFlow();
 			},30);
-			angular.element(window).bind("load",removeWrap)
+
+			var i=0;
+			do{
+				loadImage(imgList[i]);	
+				i++;
+			}while(i<imgList.length);
+
+			angular.element(window).bind("load",function(){
+				removeWrap();
+			});
 
 			function computedNum (){
 				
@@ -123,7 +153,12 @@ betaApp.directive("myLoader",function(){
 				ctx.closePath();
 				ctx.fill();
 			}
+			function loadImage(src){
+				var img = new Image();
+				img.src="/static/image/"+src;
+			}
 			function removeWrap(){
+
 				var oHeight = oWrap[0].offsetHeight;
 				var oWrapH ; 
 				var speed ;

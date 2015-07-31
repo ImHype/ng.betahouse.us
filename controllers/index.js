@@ -1,7 +1,6 @@
 betaApp.run(function($rootScope){
 	var headcon = document.getElementById("headcon");
 	var lis = headcon.getElementsByTagName('a');
-	alert(lis.length)
 	for (var i = 0; i < lis.length; i++) {
 		lis[i].onclick=function(){
 			this.className="active";
@@ -13,14 +12,14 @@ betaApp.factory("groupService",function($http){
 		getJson:function(path){
 			return $http({
 				method:"get",
-				url:"/model/"+path
+				url:"/models/"+path
 			})
 		}
 	}
 });
 
 betaApp.controller("grouplogo",function($scope,$http,groupService){
-	groupService.getJson("tuandui.json").success(function(data){
+	groupService.getJson("/tuandui.json").success(function(data){
 		$scope.groups = data;
 	})
 	$scope.groupShow=function(arg){
